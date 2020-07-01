@@ -21,6 +21,7 @@ import time
 import bluetooth
 from bluetooth import *
 import subprocess
+from time import sleep 
 
 import gtk
 from dbus.mainloop.glib import DBusGMainLoop
@@ -199,6 +200,7 @@ class BTKbDevice():
          print (gBDADDR)
          self.ccontrol.connect(( gBDADDR, self.P_CTRL ));
          self.cinterrupt.connect(( gBDADDR, self.P_INTR ));
+         sleep(0.050);
          pass
         else:
          self.listen();
